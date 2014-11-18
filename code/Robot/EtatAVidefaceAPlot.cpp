@@ -1,26 +1,26 @@
 #include "EtatAVidefaceAPlot.h"
 
-void classe1::EtatAVidefaceAPlot::tourner() {
+void robot::EtatAVidefaceAPlot::tourner() {
 	// TODO - implement EtatAVidefaceAPlot::tourner
 	throw "Not yet implemented";
 }
 
-void classe1::EtatAVidefaceAPlot::saisir() {
+void robot::EtatAVidefaceAPlot::saisir() {
 	// TODO - implement EtatAVidefaceAPlot::saisir
 	throw "Not yet implemented";
 }
 
-void classe1::EtatAVidefaceAPlot::evaluerPlot() {
+void robot::EtatAVidefaceAPlot::evaluerPlot() {
 	// TODO - implement EtatAVidefaceAPlot::evaluerPlot
 	throw "Not yet implemented";
 }
 
-void classe1::EtatAVidefaceAPlot::afficher() {
+void robot::EtatAVidefaceAPlot::afficher() {
 	// TODO - implement EtatAVidefaceAPlot::afficher
 	throw "Not yet implemented";
 }
 
-void classe1::EtatAVidefaceAPlot::getSingleton() {
+void robot::EtatAVidefaceAPlot::getSingleton() {
 	// TODO - implement EtatAVidefaceAPlot::getSingleton
 	throw "Not yet implemented";
 }

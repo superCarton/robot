@@ -1,5 +1,5 @@
-namespace classe1 {
-	class EtatEnCharge : classe1::EtatEnRoute {
+namespace robot {
+	class EtatEnCharge : robot::EtatEnRoute {
 
 
 	public:

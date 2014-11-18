@@ -1,5 +1,5 @@
 #include "Objet.h"
 
-int classe1::Objet::getPoids() {
+int robot::Objet::getPoids() {
 	return this->poids;
 }

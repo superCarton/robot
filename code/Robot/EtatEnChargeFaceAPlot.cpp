@@ -1,26 +1,26 @@
 #include "EtatEnChargeFaceAPlot.h"
 
-void classe1::EtatEnChargeFaceAPlot::tourner() {
+void robot::EtatEnChargeFaceAPlot::tourner() {
 	// TODO - implement EtatEnChargeFaceAPlot::tourner
 	throw "Not yet implemented";
 }
 
-void classe1::EtatEnChargeFaceAPlot::poser() {
+void robot::EtatEnChargeFaceAPlot::poser() {
 	// TODO - implement EtatEnChargeFaceAPlot::poser
 	throw "Not yet implemented";
 }
 
-void classe1::EtatEnChargeFaceAPlot::peser() {
+void robot::EtatEnChargeFaceAPlot::peser() {
 	// TODO - implement EtatEnChargeFaceAPlot::peser
 	throw "Not yet implemented";
 }
 
-void classe1::EtatEnChargeFaceAPlot::afficher() {
+void robot::EtatEnChargeFaceAPlot::afficher() {
 	// TODO - implement EtatEnChargeFaceAPlot::afficher
 	throw "Not yet implemented";
 }
 
-void classe1::EtatEnChargeFaceAPlot::getSingleton() {
+void robot::EtatEnChargeFaceAPlot::getSingleton() {
 	// TODO - implement EtatEnChargeFaceAPlot::getSingleton
 	throw "Not yet implemented";
 }

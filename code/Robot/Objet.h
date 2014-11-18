@@ -1,4 +1,4 @@
-namespace classe1 {
+namespace robot {
 	class Objet {
 
 	private:

@@ -1,4 +1,6 @@
-namespace classe1 {
+using namespace std;
+
+namespace robot {
 	class Robot {
 
 
@@ -7,7 +9,7 @@ namespace classe1 {
 
 		void tourner(string direction);
 
-		void saisir(objet o);
+		void saisir(Objet o);
 
 		void poser();
 
@@ -23,6 +25,6 @@ namespace classe1 {
 
 		void afficher();
 
-		void setEtat(classe1::EtatRobot etat);
+		void setEtat(robot::EtatRobot etat);
 	};
 }
