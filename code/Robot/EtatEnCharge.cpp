@@ -6,7 +6,7 @@ void classe1::EtatEnCharge::avancer() {
 }
 
 void classe1::EtatEnCharge::peser() {
-	// TODO - implement EtatEnCharge::peser
+	// TODO - implement EtatEnCharge::pese
 	throw "Not yet implemented";
 }
 
