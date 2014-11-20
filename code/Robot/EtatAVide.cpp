@@ -2,14 +2,11 @@
 
 projet_robot::modele::etats::EtatRobot& projet_robot::modele::etats::EtatRobot::instance = EtatAVide();
 
-void projet_robot::modele::etats::EtatAVide::avancer() {
-	// TODO - implement EtatAVide::avancer
-	throw "Not yet implemented";
-}
+
+void projet_robot::modele::etats::EtatAVide::avancer() {}
 
 void projet_robot::modele::etats::EtatAVide::rencontrerPlot() {
-	// TODO - implement EtatAVide::rencontrerPlot
-	throw "Not yet implemented";
+	projet_robot::modele::robot::Robot::getSingleton()::setEtat(EtatAVidefaceAPlot::getSingleton());
 }
 
 string projet_robot::modele::etats::EtatAVide::afficher() {
