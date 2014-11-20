@@ -65,7 +65,7 @@ namespace projet_robot {
 				class Tourner_Exception{};
 				class Saisir_Exception{};
 				class Poser_Exception{};
-				class RenconterPlot_Exception{};
+				class RencontrerPlot_Exception{};
 				class Peser_Exception{};
 				class EvaluerPlot_Exception{};
 				class Figer_Exception{};

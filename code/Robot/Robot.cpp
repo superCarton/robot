@@ -74,7 +74,7 @@ void projet_robot::modele::robot::Robot::rencontrerPlot(Plot p) {
 	try {
 			etat.rencontrerPlot();
 			plot = p;
-		} catch (RenconterPlot_Exception& e) {
+		} catch (RencontrerPlot_Exception& e) {
 			//Cette action est impossible dans cette état
 		}
 }
