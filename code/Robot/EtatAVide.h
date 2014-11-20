@@ -7,11 +7,12 @@ namespace projet_robot {
 
 
 			public:
-				void avancer();
+				virtual void avancer();
 
-				void rencontrerPlot();
+				virtual void rencontrerPlot();
 
-				string afficher();
+				virtual string afficher();
+				
 			};
 		}
 	}

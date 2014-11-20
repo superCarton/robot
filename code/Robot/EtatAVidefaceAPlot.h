@@ -7,15 +7,14 @@ namespace projet_robot {
 
 
 			public:
-				void tourner();
+				virtual void tourner();
 
-				void saisir();
+				virtual void saisir();
 
-				void evaluerPlot();
+				virtual void evaluerPlot();
 
-				string afficher();
+				virtual string afficher();
 
-				projet_robot::modele::etats::EtatRobot getSingleton();
 			};
 		}
 	}
