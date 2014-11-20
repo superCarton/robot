@@ -1,5 +1,5 @@
 #include "Plot.h"
 
-int robot::Plot::getHauteur() {
+int projet_robot::modele::robot::Plot::getHauteur() {
 	return this->hauteur;
 }

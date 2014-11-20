@@ -1,30 +1,38 @@
-using namespace std;
+namespace projet_robot {
+	namespace modele {
+		namespace robot {
+			class Robot {
 
-namespace robot {
-	class Robot {
+			private:
+				projet_robot::modele::robot::Robot instance_robot;
 
+			public:
+				void avancer(int x, int y);
 
-	public:
-		void avancer(int x, int y);
+				void tourner(string direction);
 
-		void tourner(string direction);
+				void saisir(projet_robot::modele::robot::Objet o);
 
-		void saisir(Objet o);
+				void poser();
 
-		void poser();
+				void rencontrerPlot(Plot p);
 
-		int peser();
+				int peser();
 
-		void rencontrerPlot(Plot p);
+				int evaluerPlot();
 
-		int evaluerPlot();
+				void figer();
 
-		void figer();
+				void repartir();
 
-		void repartir();
+				void afficher();
 
-		void afficher();
+				void setEtat(projet_robot::modele::etats::EtatRobot etat);
 
-		void setEtat(robot::EtatRobot etat);
-	};
+				projet_robot::modele::robot::Robot getSingleton();
+
+				void notify();
+			};
+		}
+	}
 }

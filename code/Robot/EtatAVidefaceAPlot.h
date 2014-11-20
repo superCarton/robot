@@ -1,16 +1,20 @@
-namespace robot {
-	class EtatAVidefaceAPlot : robot::EtatEnRoute {
+namespace projet_robot {
+	namespace modele {
+		namespace etats {
+			class EtatAVidefaceAPlot : projet_robot::modele::etats::EtatEnRoute {
 
 
-	public:
-		void tourner();
+			public:
+				void tourner();
 
-		void saisir();
+				void saisir();
 
-		void evaluerPlot();
+				void evaluerPlot();
 
-		void afficher();
+				void afficher();
 
-		void getSingleton();
-	};
+				projet_robot::modele::etats::EtatRobot getSingleton();
+			};
+		}
+	}
 }

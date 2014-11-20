@@ -1,10 +1,14 @@
-namespace robot {
-	class Objet {
+namespace projet_robot {
+	namespace modele {
+		namespace robot {
+			class Objet {
 
-	private:
-		int poids;
+			private:
+				int poids;
 
-	public:
-		int getPoids();
-	};
+			public:
+				int getPoids();
+			};
+		}
+	}
 }

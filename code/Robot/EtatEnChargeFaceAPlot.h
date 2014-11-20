@@ -1,16 +1,20 @@
-namespace robot {
-	class EtatEnChargeFaceAPlot : robot::EtatEnRoute {
+namespace projet_robot {
+	namespace modele {
+		namespace etats {
+			class EtatEnChargeFaceAPlot : projet_robot::modele::etats::EtatEnRoute {
 
 
-	public:
-		void tourner();
+			public:
+				void tourner();
 
-		void poser();
+				void poser();
 
-		void peser();
+				void peser();
 
-		void afficher();
+				void afficher();
 
-		void getSingleton();
-	};
+				projet_robot::modele::etats::EtatRobot getSingleton();
+			};
+		}
+	}
 }

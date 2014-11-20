@@ -1,10 +1,14 @@
-namespace robot {
-	class Plot {
+namespace projet_robot {
+	namespace modele {
+		namespace robot {
+			class Plot {
 
-	private:
-		int hauteur;
+			private:
+				int hauteur;
 
-	public:
-		int getHauteur();
-	};
+			public:
+				int getHauteur();
+			};
+		}
+	}
 }

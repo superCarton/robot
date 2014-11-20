@@ -1,17 +1,21 @@
-namespace robot {
-	class Position {
+namespace projet_robot {
+	namespace modele {
+		namespace robot {
+			class Position {
 
-	private:
-		int x;
-		int y;
+			private:
+				int x;
+				int y;
 
-	public:
-		void setx(int x);
+			public:
+				void setx(int x);
 
-		void sety(int y);
+				void sety(int y);
 
-		int getx();
+				int getx();
 
-		int gety();
-	};
+				int gety();
+			};
+		}
+	}
 }

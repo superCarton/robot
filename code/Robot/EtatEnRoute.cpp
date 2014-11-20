@@ -1,6 +1,6 @@
 #include "EtatEnRoute.h"
 
-void robot::EtatEnRoute::figer() {
+void projet_robot::modele::etats::EtatEnRoute::figer() {
 	// TODO - implement EtatEnRoute::figer
 	throw "Not yet implemented";
 }

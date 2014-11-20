@@ -1,56 +1,56 @@
 #include "EtatRobot.h"
 
-void robot::EtatRobot::avancer() {
+void projet_robot::modele::etats::EtatRobot::avancer() {
 	// TODO - implement EtatRobot::avancer
 	throw "Not yet implemented";
 }
 
-void robot::EtatRobot::tourner() {
+void projet_robot::modele::etats::EtatRobot::tourner() {
 	// TODO - implement EtatRobot::tourner
 	throw "Not yet implemented";
 }
 
-void robot::EtatRobot::saisir() {
+void projet_robot::modele::etats::EtatRobot::saisir() {
 	// TODO - implement EtatRobot::saisir
 	throw "Not yet implemented";
 }
 
-void robot::EtatRobot::poser() {
+void projet_robot::modele::etats::EtatRobot::poser() {
 	// TODO - implement EtatRobot::poser
 	throw "Not yet implemented";
 }
 
-void robot::EtatRobot::peser() {
+void projet_robot::modele::etats::EtatRobot::peser() {
 	// TODO - implement EtatRobot::peser
 	throw "Not yet implemented";
 }
 
-void robot::EtatRobot::rencontrerPlot() {
+void projet_robot::modele::etats::EtatRobot::rencontrerPlot() {
 	// TODO - implement EtatRobot::rencontrerPlot
 	throw "Not yet implemented";
 }
 
-void robot::EtatRobot::evaluerPlot() {
+void projet_robot::modele::etats::EtatRobot::evaluerPlot() {
 	// TODO - implement EtatRobot::evaluerPlot
 	throw "Not yet implemented";
 }
 
-void robot::EtatRobot::figer() {
+void projet_robot::modele::etats::EtatRobot::figer() {
 	// TODO - implement EtatRobot::figer
 	throw "Not yet implemented";
 }
 
-void robot::EtatRobot::repartir() {
+void projet_robot::modele::etats::EtatRobot::repartir() {
 	// TODO - implement EtatRobot::repartir
 	throw "Not yet implemented";
 }
 
-void robot::EtatRobot::afficher() {
+void projet_robot::modele::etats::EtatRobot::afficher() {
 	// TODO - implement EtatRobot::afficher
 	throw "Not yet implemented";
 }
 
-void robot::EtatRobot::getSingleton() {
+projet_robot::modele::etats::EtatRobot projet_robot::modele::etats::EtatRobot::getSingleton() {
 	// TODO - implement EtatRobot::getSingleton
 	throw "Not yet implemented";
 }

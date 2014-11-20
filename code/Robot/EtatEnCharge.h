@@ -1,16 +1,20 @@
-namespace robot {
-	class EtatEnCharge : robot::EtatEnRoute {
+namespace projet_robot {
+	namespace modele {
+		namespace etats {
+			class EtatEnCharge : projet_robot::modele::etats::EtatEnRoute {
 
 
-	public:
-		void avancer();
+			public:
+				void avancer();
 
-		void peser();
+				void peser();
 
-		void rencontrerPlot();
+				void rencontrerPlot();
 
-		void afficher();
+				void afficher();
 
-		void getSingleton();
-	};
+				projet_robot::modele::etats::EtatRobot getSingleton();
+			};
+		}
+	}
 }

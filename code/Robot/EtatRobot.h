@@ -1,28 +1,34 @@
-namespace robot {
-	class EtatRobot {
+namespace projet_robot {
+	namespace modele {
+		namespace etats {
+			class EtatRobot {
 
+			private:
+				int instance;
 
-	public:
-		void avancer();
+			public:
+				void avancer();
 
-		void tourner();
+				void tourner();
 
-		void saisir();
+				void saisir();
 
-		void poser();
+				void poser();
 
-		void peser();
+				void peser();
 
-		void rencontrerPlot();
+				void rencontrerPlot();
 
-		void evaluerPlot();
+				void evaluerPlot();
 
-		void figer();
+				void figer();
 
-		void repartir();
+				void repartir();
 
-		void afficher();
+				void afficher();
 
-		void getSingleton();
-	};
+				projet_robot::modele::etats::EtatRobot getSingleton();
+			};
+		}
+	}
 }

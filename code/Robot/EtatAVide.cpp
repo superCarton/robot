@@ -1,21 +1,21 @@
 #include "EtatAVide.h"
 
-void robot::EtatAVide::avancer() {
+void projet_robot::modele::etats::EtatAVide::avancer() {
 	// TODO - implement EtatAVide::avancer
 	throw "Not yet implemented";
 }
 
-void robot::EtatAVide::rencontrerPlot() {
+void projet_robot::modele::etats::EtatAVide::rencontrerPlot() {
 	// TODO - implement EtatAVide::rencontrerPlot
 	throw "Not yet implemented";
 }
 
-void robot::EtatAVide::afficher() {
+void projet_robot::modele::etats::EtatAVide::afficher() {
 	// TODO - implement EtatAVide::afficher
 	throw "Not yet implemented";
 }
 
-void robot::EtatAVide::getSingleton() {
+projet_robot::modele::etats::EtatRobot projet_robot::modele::etats::EtatAVide::getSingleton() {
 	// TODO - implement EtatAVide::getSingleton
 	throw "Not yet implemented";
 }
