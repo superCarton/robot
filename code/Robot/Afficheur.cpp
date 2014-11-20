@@ -3,6 +3,7 @@
 
 void projet_robot::vue::Afficheur::update(projet_robot::modele::robot::Robot r) {
 	this->observable=r;
+	afficher();
 }
 
 void projet_robot::vue::Afficheur::afficher() {
