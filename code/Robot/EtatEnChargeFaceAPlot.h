@@ -1,3 +1,4 @@
+#include "EtatEnRoute.h";
 using namespace std;
 
 namespace projet_robot {

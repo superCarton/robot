@@ -8,6 +8,7 @@
 #ifndef CODE_ROBOT_ETATFIGE_H_
 #define CODE_ROBOT_ETATFIGE_H_
 
+#include "EtatRobot.h";
 using namespace std;
 
 namespace projet_robot {
@@ -22,7 +23,6 @@ namespace projet_robot {
 			void repartir();
 			void setEtatPrecedent(EtatEnRoute); 
 			string afficher();
-
 			};
 		}
 	}

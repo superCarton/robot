@@ -10,6 +10,7 @@
 projet_robot::modele::etats::EtatRobot& projet_robot::modele::etats::EtatRobot::instance = EtatFige();
 
 void projet_robot::modele::etats::EtatFige::repartir(){
+	projet_robot::modele::robot::Robot::getSingleton().setEtat(etatPrecedent);
 }
 
 void projet_robot::modele::etats::EtatFige::setEtatPrecedent(EtatEnRoute e){

@@ -34,6 +34,7 @@ void projet_robot::modele::robot::Robot::avancer(int n) {
 				}
 
 			}
+			notify();
 		}
 	} catch (Avancer_Exception& e) {
 		//Ce déplacement est impossible dans cette état
@@ -46,6 +47,7 @@ void projet_robot::modele::robot::Robot::tourner(char dir) {
 	try {
 		etat.tourner();
 		direction = dir;
+		notify();
 	} catch (Tourner_Exception& e) {
 		//Cette action est impossible dans cette état
 	}
@@ -55,6 +57,7 @@ void projet_robot::modele::robot::Robot::saisir(projet_robot::modele::robot::Obj
 	try {
 		etat.saisir();
 		objet = o;
+		notify();
 	} catch (Saisir_Exception& e) {
 		//Cette action est impossible dans cette état
 	}
@@ -65,6 +68,7 @@ void projet_robot::modele::robot::Robot::poser() {
 	try {
 		etat.poser();
 		objet = NULL;
+		notify();
 	} catch (Poser_Exception& e) {
 		//Cette action est impossible dans cette état
 	}
@@ -74,6 +78,7 @@ void projet_robot::modele::robot::Robot::rencontrerPlot(Plot p) {
 	try {
 			etat.rencontrerPlot();
 			plot = p;
+			notify();
 		} catch (RencontrerPlot_Exception& e) {
 			//Cette action est impossible dans cette état
 		}
@@ -102,6 +107,7 @@ int projet_robot::modele::robot::Robot::evaluerPlot() {
 void projet_robot::modele::robot::Robot::figer() {
 	try {
 			etat.figer();
+			notify();
 		} catch (Figer_Exception& e) {
 			//Cette action est impossible dans cette état
 		}
@@ -110,6 +116,7 @@ void projet_robot::modele::robot::Robot::figer() {
 void projet_robot::modele::robot::Robot::repartir() {
 	try {
 			etat.repartir();
+			notify();
 		} catch (Repartir_Exception& e) {
 			//Cette action est impossible dans cette état
 		}
@@ -147,4 +154,8 @@ projet_robot::modele::robot::Plot projet_robot::modele::robot::Robot::getPlot() 
 
 projet_robot::modele::robot::Objet projet_robot::modele::robot::Robot::getObjet() {
 	return objet;
+}
+
+void projet_robot::modele::robot::Robot::setObserveur(vue::Afficheur a) {
+	afficheur = a;
 }

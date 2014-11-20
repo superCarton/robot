@@ -57,6 +57,8 @@ namespace projet_robot {
 
 				Plot getPlot();
 
+				void setObserveur(vue::Afficheur a);
+
 				/**** Exception ****/
 
 				class Marche_Arriere_Interdite{};
