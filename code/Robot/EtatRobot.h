@@ -5,7 +5,7 @@ namespace projet_robot {
 		namespace etats {
 			class EtatRobot {
 
-			private:
+			protected:
 				static EtatRobot& instance;
 
 			public:
@@ -29,7 +29,7 @@ namespace projet_robot {
 
 				string afficher();
 
-				static projet_robot::modele::etats::EtatRobot& getSingleton();
+				virtual static projet_robot::modele::etats::EtatRobot& getSingleton();
 			};
 		}
 	}

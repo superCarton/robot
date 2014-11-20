@@ -13,6 +13,7 @@ namespace projet_robot {
 				Plot(int h, Objet obj) : hauteur(h), objet(obj){}
 				int getHauteur();
 				Objet getObjet();
+				void setObjet(Objet o);
 				string afficher();
 			};
 		}

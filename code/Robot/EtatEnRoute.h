@@ -1,3 +1,5 @@
+#include "EtatRobot.h";
+
 namespace projet_robot {
 	namespace modele {
 		namespace etats {

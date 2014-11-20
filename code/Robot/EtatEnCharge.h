@@ -1,4 +1,6 @@
+#include "EtatEnRoute.h";
 using namespace std;
+
 
 namespace projet_robot {
 	namespace modele {
@@ -14,8 +16,6 @@ namespace projet_robot {
 				void rencontrerPlot();
 
 				string afficher();
-
-				projet_robot::modele::etats::EtatRobot getSingleton();
 			};
 		}
 	}

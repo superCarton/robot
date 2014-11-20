@@ -25,3 +25,5 @@ string projet_robot::modele::etats::EtatEnChargeFaceAPlot::afficher() {
 	return s;
 }
 
+
+
