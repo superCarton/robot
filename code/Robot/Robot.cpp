@@ -58,70 +58,92 @@ void projet_robot::modele::robot::Robot::saisir(projet_robot::modele::robot::Obj
 		//Cette action est impossible dans cette état
 	}
 }
-}
+
 
 void projet_robot::modele::robot::Robot::poser() {
-	// TODO - implement Robot::poser
-	throw "Not yet implemented";
+	try {
+		etat.poser();
+		objet = NULL;
+	} catch (Poser_Exception& e) {
+		//Cette action est impossible dans cette état
+	}
 }
 
 void projet_robot::modele::robot::Robot::rencontrerPlot(Plot p) {
-	// TODO - implement Robot::rencontrerPlot
-	throw "Not yet implemented";
+	try {
+			etat.rencontrerPlot();
+			plot = p;
+		} catch (RenconterPlot_Exception& e) {
+			//Cette action est impossible dans cette état
+		}
 }
 
 int projet_robot::modele::robot::Robot::peser() {
-	// TODO - implement Robot::peser
-	throw "Not yet implemented";
+	try {
+			etat.peser();
+			return objet.getPoids();
+		} catch (Peser_Exception& e) {
+			//Cette action est impossible dans cette état
+			return -1;
+		}
 }
 
 int projet_robot::modele::robot::Robot::evaluerPlot() {
-	// TODO - implement Robot::evaluerPlot
-	throw "Not yet implemented";
+	try {
+			etat.peser();
+			return plot.getHauteur();
+		} catch (EvaluerPlot_Exception& e) {
+			//Cette action est impossible dans cette état
+			return -1;
+		}
 }
 
 void projet_robot::modele::robot::Robot::figer() {
-	// TODO - implement Robot::figer
-	throw "Not yet implemented";
+	try {
+			etat.figer();
+		} catch (Figer_Exception& e) {
+			//Cette action est impossible dans cette état
+		}
 }
 
 void projet_robot::modele::robot::Robot::repartir() {
-	// TODO - implement Robot::repartir
-	throw "Not yet implemented";
+	try {
+			etat.repartir();
+		} catch (Repartir_Exception& e) {
+			//Cette action est impossible dans cette état
+		}
 }
 
-void projet_robot::modele::robot::Robot::afficher() {
-	// TODO - implement Robot::afficher
-	throw "Not yet implemented";
+string projet_robot::modele::robot::Robot::afficher() {
+	string s;
+	s+= position.afficher()+"\n"+etat.afficher();
+	return s;
 }
 
 void projet_robot::modele::robot::Robot::setEtat(projet_robot::modele::etats::EtatRobot etat) {
-	// TODO - implement Robot::setEtat
-	throw "Not yet implemented";
+	this -> etat = etat;
 }
 
 projet_robot::modele::robot::Robot& projet_robot::modele::robot::Robot::getSingleton() {
-
 	return _instance_robot;
 }
 
 void projet_robot::modele::robot::Robot::notify() {
-	// TODO - implement Robot::notify
-	throw "Not yet implemented";
+	afficheur.update(*this);
 }
 
-EtatRobot projet_robot::modele::robot::Robot::getEtat() {
+projet_robot::modele::etats::EtatRobot projet_robot::modele::robot::Robot::getEtat() {
 	return etat;
 }
 
-Position projet_robot::modele::robot::Robot::getPosition() {
+projet_robot::modele::robot::Position projet_robot::modele::robot::Robot::getPosition() {
 	return position;
 }
 
-Plot projet_robot::modele::robot::Robot::getPlot() {
+projet_robot::modele::robot::Plot projet_robot::modele::robot::Robot::getPlot() {
 	return plot;
 }
 
-Objet projet_robot::modele::robot::Robot::getObjet() {
+projet_robot::modele::robot::Objet projet_robot::modele::robot::Robot::getObjet() {
 	return objet;
 }

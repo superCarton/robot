@@ -15,3 +15,9 @@ int projet_robot::modele::robot::Position::getx() {
 int projet_robot::modele::robot::Position::gety() {
 	return this->y;
 }
+
+string projet_robot::modele::robot::Position::afficher() {
+	string s;
+	s+="position : ["+getx()+", "+gety()+"]";
+	return s;
+}

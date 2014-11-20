@@ -16,6 +16,7 @@ namespace projet_robot {
 				Objet objet;
 				char direction;
 				etats::EtatRobot etat;
+				vue::Afficheur afficheur;
 
 
 			public:
@@ -40,7 +41,7 @@ namespace projet_robot {
 
 				void repartir();
 
-				void afficher();
+				string afficher();
 
 				void setEtat(projet_robot::modele::etats::EtatRobot etat);
 
@@ -63,6 +64,12 @@ namespace projet_robot {
 				class Avancer_Exception{};
 				class Tourner_Exception{};
 				class Saisir_Exception{};
+				class Poser_Exception{};
+				class RenconterPlot_Exception{};
+				class Peser_Exception{};
+				class EvaluerPlot_Exception{};
+				class Figer_Exception{};
+				class Repartir_Exception{};
 			};
 		}
 	}

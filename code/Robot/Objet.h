@@ -1,3 +1,5 @@
+using namespace std;
+
 namespace projet_robot {
 	namespace modele {
 		namespace robot {
@@ -9,6 +11,7 @@ namespace projet_robot {
 			public:
 				Objet(int p): poids(p){}
 				int getPoids();
+				string afficher();
 			};
 		}
 	}

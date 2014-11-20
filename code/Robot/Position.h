@@ -1,3 +1,5 @@
+using namespace std;
+
 namespace projet_robot {
 	namespace modele {
 		namespace robot {
@@ -17,6 +19,8 @@ namespace projet_robot {
 				int getx();
 
 				int gety();
+
+				string afficher();
 			};
 		}
 	}

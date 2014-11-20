@@ -1,3 +1,5 @@
+using namespace std;
+
 namespace projet_robot {
 	namespace modele {
 		namespace robot {
@@ -11,6 +13,7 @@ namespace projet_robot {
 				Plot(int h, Objet obj) : hauteur(h), objet(obj){}
 				int getHauteur();
 				Objet getObjet();
+				string afficher();
 			};
 		}
 	}
