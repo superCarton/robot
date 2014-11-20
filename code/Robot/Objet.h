@@ -7,6 +7,7 @@ namespace projet_robot {
 				int poids;
 
 			public:
+				Objet(int p): poids(p){}
 				int getPoids();
 			};
 		}
