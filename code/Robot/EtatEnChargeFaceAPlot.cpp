@@ -1,5 +1,7 @@
 #include "EtatEnChargeFaceAPlot.h"
 
+projet_robot::modele::etats::EtatRobot& projet_robot::modele::etats::EtatRobot::instance = EtatEnChargeFaceAPlot();
+
 void projet_robot::modele::etats::EtatEnChargeFaceAPlot::tourner() {
 	// TODO - implement EtatEnChargeFaceAPlot::tourner
 	throw "Not yet implemented";
@@ -20,7 +22,3 @@ void projet_robot::modele::etats::EtatEnChargeFaceAPlot::afficher() {
 	throw "Not yet implemented";
 }
 
-projet_robot::modele::etats::EtatRobot projet_robot::modele::etats::EtatEnChargeFaceAPlot::getSingleton() {
-	// TODO - implement EtatEnChargeFaceAPlot::getSingleton
-	throw "Not yet implemented";
-}

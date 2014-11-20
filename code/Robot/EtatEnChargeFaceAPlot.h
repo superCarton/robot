@@ -12,8 +12,6 @@ namespace projet_robot {
 				void peser();
 
 				void afficher();
-
-				projet_robot::modele::etats::EtatRobot getSingleton();
 			};
 		}
 	}

@@ -1,5 +1,8 @@
 #include "Robot.h"
 
+projet_robot::modele::robot::Robot& projet_robot::modele::robot::Robot::_instance_robot = Robot();
+
+
 void projet_robot::modele::robot::Robot::avancer(int x, int y) {
 	// TODO - implement Robot::avancer
 	throw "Not yet implemented";
@@ -55,9 +58,9 @@ void projet_robot::modele::robot::Robot::setEtat(projet_robot::modele::etats::Et
 	throw "Not yet implemented";
 }
 
-projet_robot::modele::robot::Robot projet_robot::modele::robot::Robot::getSingleton() {
-	// TODO - implement Robot::getSingleton
-	throw "Not yet implemented";
+projet_robot::modele::robot::Robot& projet_robot::modele::robot::Robot::getSingleton() {
+
+	return _instance_robot;
 }
 
 void projet_robot::modele::robot::Robot::notify() {

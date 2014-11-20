@@ -1,5 +1,6 @@
 #include "EtatRobot.h"
 
+
 void projet_robot::modele::etats::EtatRobot::avancer() {
 	// TODO - implement EtatRobot::avancer
 	throw "Not yet implemented";
@@ -50,7 +51,6 @@ void projet_robot::modele::etats::EtatRobot::afficher() {
 	throw "Not yet implemented";
 }
 
-projet_robot::modele::etats::EtatRobot projet_robot::modele::etats::EtatRobot::getSingleton() {
-	// TODO - implement EtatRobot::getSingleton
-	throw "Not yet implemented";
+projet_robot::modele::etats::EtatRobot& projet_robot::modele::etats::EtatRobot::getSingleton() {
+	return instance;
 }

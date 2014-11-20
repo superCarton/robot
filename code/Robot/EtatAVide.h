@@ -10,8 +10,6 @@ namespace projet_robot {
 				void rencontrerPlot();
 
 				void afficher();
-
-				projet_robot::modele::etats::EtatRobot getSingleton();
 			};
 		}
 	}

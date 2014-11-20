@@ -4,7 +4,7 @@ namespace projet_robot {
 			class EtatRobot {
 
 			private:
-				int instance;
+				static EtatRobot& instance;
 
 			public:
 				void avancer();
@@ -27,7 +27,7 @@ namespace projet_robot {
 
 				void afficher();
 
-				projet_robot::modele::etats::EtatRobot getSingleton();
+				static projet_robot::modele::etats::EtatRobot& getSingleton();
 			};
 		}
 	}
