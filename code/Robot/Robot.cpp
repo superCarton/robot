@@ -1,21 +1,63 @@
 #include "Robot.h"
-
+using namespace std;
 projet_robot::modele::robot::Robot& projet_robot::modele::robot::Robot::_instance_robot = Robot();
 
 
-void projet_robot::modele::robot::Robot::avancer(int x, int y) {
-	// TODO - implement Robot::avancer
-	throw "Not yet implemented";
+void projet_robot::modele::robot::Robot::avancer(int n) {
+	try {
+		etat.avancer();
+		if(n < 0) {
+			throw Marche_Arriere_Interdite();
+		}
+		else {
+			switch(direction) {
+				case 'N' : {
+					position.sety(n);
+					break;
+				}
+				case 'S' : {
+					position.sety(-n);
+					break;
+				}
+				case 'E' : {
+					position.setx(n);
+					break;
+				}
+				case 'O' : {
+					position.setx(-n);
+					break;
+				}
+				default : {
+					throw Direction_Inconnue();
+					break;
+				}
+
+			}
+		}
+	} catch (Avancer_Exception& e) {
+		//Ce déplacement est impossible dans cette état
+	}
+
+
 }
 
-void projet_robot::modele::robot::Robot::tourner(string direction) {
-	// TODO - implement Robot::tourner
-	throw "Not yet implemented";
+void projet_robot::modele::robot::Robot::tourner(char dir) {
+	try {
+		etat.tourner();
+		direction = dir;
+	} catch (Tourner_Exception& e) {
+		//Cette action est impossible dans cette état
+	}
 }
 
 void projet_robot::modele::robot::Robot::saisir(projet_robot::modele::robot::Objet o) {
-	// TODO - implement Robot::saisir
-	throw "Not yet implemented";
+	try {
+		etat.saisir();
+		objet = o;
+	} catch (Saisir_Exception& e) {
+		//Cette action est impossible dans cette état
+	}
+}
 }
 
 void projet_robot::modele::robot::Robot::poser() {
@@ -66,4 +108,20 @@ projet_robot::modele::robot::Robot& projet_robot::modele::robot::Robot::getSingl
 void projet_robot::modele::robot::Robot::notify() {
 	// TODO - implement Robot::notify
 	throw "Not yet implemented";
+}
+
+EtatRobot projet_robot::modele::robot::Robot::getEtat() {
+	return etat;
+}
+
+Position projet_robot::modele::robot::Robot::getPosition() {
+	return position;
+}
+
+Plot projet_robot::modele::robot::Robot::getPlot() {
+	return plot;
+}
+
+Objet projet_robot::modele::robot::Robot::getObjet() {
+	return objet;
 }

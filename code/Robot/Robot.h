@@ -14,15 +14,17 @@ namespace projet_robot {
 				Position position;
 				Plot plot;
 				Objet objet;
+				char direction;
+				etats::EtatRobot etat;
 
 
 			public:
 
-				Robot() : position(0,0), plot(NULL), objet(NULL) {};
+				Robot() : position(0,0), plot(NULL), objet(NULL), direction('N') {};
 
-				void avancer(int x, int y);
+				void avancer(int n);
 
-				void tourner(string direction);
+				void tourner(char dir);
 
 				void saisir(Objet o);
 
@@ -45,6 +47,22 @@ namespace projet_robot {
 				static Robot& getSingleton();
 
 				void notify();
+
+				etats::EtatRobot getEtat();
+
+				Position getPosition();
+
+				Objet getObjet();
+
+				Plot getPlot();
+
+				/**** Exception ****/
+
+				class Marche_Arriere_Interdite{};
+				class Direction_Inconnue;
+				class Avancer_Exception{};
+				class Tourner_Exception{};
+				class Saisir_Exception{};
 			};
 		}
 	}
