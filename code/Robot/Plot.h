@@ -5,9 +5,12 @@ namespace projet_robot {
 
 			private:
 				int hauteur;
+				Objet objet;
 
 			public:
+				Plot(int h, Objet obj) : hauteur(h), objet(obj){}
 				int getHauteur();
+				Objet getObjet();
 			};
 		}
 	}

@@ -8,6 +8,8 @@ namespace projet_robot {
 				int y;
 
 			public:
+				Position(int abs, int ord) : x(abs), y(ord){}
+
 				void setx(int x);
 
 				void sety(int y);
