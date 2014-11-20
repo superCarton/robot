@@ -1,6 +1,7 @@
 #ifndef _ROBOT_H_
 #define _ROBOT_H_
 
+#import <stdio.h>;
 using namespace std;
 
 namespace projet_robot {
@@ -10,13 +11,14 @@ namespace projet_robot {
 
 			private:
 				static Robot& _instance_robot;
+				Position position;
 				Plot plot;
 				Objet objet;
 
 
 			public:
 
-				Robot() : plot = null, objet = null;
+				Robot() : position(0,0), plot(NULL), objet(NULL) {};
 
 				void avancer(int x, int y);
 
