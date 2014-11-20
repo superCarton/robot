@@ -20,8 +20,8 @@ void projet_robot::modele::etats::EtatEnChargeFaceAPlot::peser() {
 string projet_robot::modele::etats::EtatEnChargeFaceAPlot::afficher() {
 	string s;
 	s += "Etat en charge face à plot\n";
-	s += projet_robot::modele::robot::Robot.getSingleton().getPlot().afficher() + "\n";
-	s+= projet_robot::modele::robot::Robot.getSingleton().getObjet().afficher() + "\n";
+	s += projet_robot::modele::robot::Robot::getSingleton().getPlot().afficher() + "\n";
+	s+= projet_robot::modele::robot::Robot::getSingleton().getObjet().afficher() + "\n";
 	return s;
 }
 

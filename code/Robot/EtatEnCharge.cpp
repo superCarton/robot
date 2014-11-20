@@ -20,6 +20,6 @@ void projet_robot::modele::etats::EtatEnCharge::rencontrerPlot() {
 string projet_robot::modele::etats::EtatEnCharge::afficher() {
 	string s="";
 	s += "Etat en charge\n";
-	s += "Poids de l'objet : " + projet_robot::modele::robot::Robot.getSingleton().getObjet().afficher() + "\n";
+	s += "Poids de l'objet : " + projet_robot::modele::robot::Robot::getSingleton().getObjet().afficher() + "\n";
 	return s;
 }

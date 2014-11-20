@@ -1,5 +1,6 @@
 #include "Robot.h"
 using namespace std;
+
 projet_robot::modele::robot::Robot& projet_robot::modele::robot::Robot::_instance_robot = Robot();
 
 
