@@ -1,3 +1,5 @@
+using namespace std;
+
 namespace projet_robot {
 	namespace modele {
 		namespace etats {
@@ -25,7 +27,7 @@ namespace projet_robot {
 
 				void repartir();
 
-				void afficher();
+				string afficher();
 
 				static projet_robot::modele::etats::EtatRobot& getSingleton();
 			};

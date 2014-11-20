@@ -46,9 +46,8 @@ void projet_robot::modele::etats::EtatRobot::repartir() {
 	throw "Not yet implemented";
 }
 
-void projet_robot::modele::etats::EtatRobot::afficher() {
-	// TODO - implement EtatRobot::afficher
-	throw "Not yet implemented";
+string projet_robot::modele::etats::EtatRobot::afficher() {
+	return "Etat robot --> ne doit pas etre appelé";
 }
 
 projet_robot::modele::etats::EtatRobot& projet_robot::modele::etats::EtatRobot::getSingleton() {

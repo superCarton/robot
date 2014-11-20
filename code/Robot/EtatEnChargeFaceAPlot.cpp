@@ -17,8 +17,11 @@ void projet_robot::modele::etats::EtatEnChargeFaceAPlot::peser() {
 	throw "Not yet implemented";
 }
 
-void projet_robot::modele::etats::EtatEnChargeFaceAPlot::afficher() {
-	// TODO - implement EtatEnChargeFaceAPlot::afficher
-	throw "Not yet implemented";
+string projet_robot::modele::etats::EtatEnChargeFaceAPlot::afficher() {
+	string s;
+	s += "Etat en charge face à plot\n";
+	s += projet_robot::modele::robot::Robot.getSingleton().getPlot().afficher() + "\n";
+	s+= projet_robot::modele::robot::Robot.getSingleton().getObjet().afficher() + "\n";
+	return s;
 }
 

@@ -12,7 +12,6 @@ void projet_robot::modele::etats::EtatAVide::rencontrerPlot() {
 	throw "Not yet implemented";
 }
 
-void projet_robot::modele::etats::EtatAVide::afficher() {
-	// TODO - implement EtatAVide::afficher
-	throw "Not yet implemented";
+string projet_robot::modele::etats::EtatAVide::afficher() {
+	return "Etat a vide\n";
 }

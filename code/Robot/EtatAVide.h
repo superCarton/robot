@@ -1,3 +1,5 @@
+using namespace std;
+
 namespace projet_robot {
 	namespace modele {
 		namespace etats {
@@ -9,7 +11,7 @@ namespace projet_robot {
 
 				void rencontrerPlot();
 
-				void afficher();
+				string afficher();
 			};
 		}
 	}

@@ -9,8 +9,7 @@ void projet_robot::vue::Afficheur::afficher() {
 	if (observable == NULL){
 		cout << "Aucun robot à afficher" << endl;
 	} else {
-		cout << "Position (" << observable.getPosition().getx() << ", " << observable.getPosition().gety() << ")" << endl;
-		cout << observable.getEtat().afficher() << endl;
+		cout << observable.afficher() << endl;
 	}
 }
 

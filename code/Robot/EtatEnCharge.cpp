@@ -17,7 +17,9 @@ void projet_robot::modele::etats::EtatEnCharge::rencontrerPlot() {
 	throw "Not yet implemented";
 }
 
-void projet_robot::modele::etats::EtatEnCharge::afficher() {
-	// TODO - implement EtatEnCharge::afficher
-	throw "Not yet implemented";
+string projet_robot::modele::etats::EtatEnCharge::afficher() {
+	string s="";
+	s += "Etat en charge\n";
+	s += "Poids de l'objet : " + projet_robot::modele::robot::Robot.getSingleton().getObjet().afficher() + "\n";
+	return s;
 }

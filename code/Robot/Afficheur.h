@@ -1,6 +1,5 @@
-#include <vector>;
-#include <stdio.h>;
-#include "Robot.h";
+#include <vector>
+#include <stdio.h>
 
 using namespace std;
 
@@ -9,16 +8,16 @@ namespace projet_robot {
 		class Afficheur {
 
 		private:
-			Robot observable;
+			projet_robot::modele::robot::Robot observable;
 
 		public:
 			Afficheur() : observable(NULL){}
 
-			void update(Robot r);
+			void update(projet_robot::modele::robot::Robot r);
 
 			void afficher();
 
-			void set_observable(Robot r);
+			void set_observable(projet_robot::modele::robot::Robot r);
 		};
 	}
 }
