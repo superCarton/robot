@@ -1,21 +1,24 @@
+#ifndef _ETAT_EN_CHARGE_FACE_A_PLOT_H_
+#define _ETAT_EN_CHARGE_FACE_A_PLOT_H_
+
 #include "EtatEnRoute.h"
 using namespace std;
 
-namespace projet_robot {
-	namespace modele {
-		namespace etats {
-			class EtatEnChargeFaceAPlot : projet_robot::modele::etats::EtatEnRoute {
+class EtatEnChargeFaceAPlot: public EtatEnRoute {
 
+private:
+	static EtatEnChargeFaceAPlot* instance;
 
-			public:
-				void tourner();
+public:
+	EtatRobot* tourner();
 
-				void poser();
+	EtatRobot* poser();
 
-				void peser();
+	EtatRobot* peser();
 
-				string afficher();
-			};
-		}
-	}
-}
+	string afficher();
+
+	static EtatEnChargeFaceAPlot* getSingleton();
+};
+
+#endif

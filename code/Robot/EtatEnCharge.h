@@ -1,22 +1,24 @@
+#ifndef _ETAT_EN_CHARGE_H_
+#define _ETAT_EN_CHARGE_H_
+
 #include "EtatEnRoute.h"
 using namespace std;
 
+class EtatEnCharge: public EtatEnRoute {
 
-namespace projet_robot {
-	namespace modele {
-		namespace etats {
-			class EtatEnCharge : projet_robot::modele::etats::EtatEnRoute {
+private:
+	static EtatEnCharge* instance;
 
+public:
+	EtatRobot* avancer();
 
-			public:
-				void avancer();
+	EtatRobot* peser();
 
-				void peser();
+	EtatRobot* rencontrerPlot();
 
-				void rencontrerPlot();
+	string afficher();
 
-				string afficher();
-			};
-		}
-	}
-}
+	static EtatEnCharge* getSingleton();
+};
+
+#endif

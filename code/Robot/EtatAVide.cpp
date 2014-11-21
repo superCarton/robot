@@ -1,14 +1,19 @@
 #include "EtatAVide.h"
+#include "EtatAVidefaceAPlot.h"
 
-projet_robot::modele::etats::EtatRobot& projet_robot::modele::etats::EtatRobot::instance = EtatAVide();
+EtatAVide* EtatAVide::instance = new EtatAVide;
 
 
-void projet_robot::modele::etats::EtatAVide::avancer() {}
+EtatRobot* EtatAVide::avancer() { return this;}
 
-void projet_robot::modele::etats::EtatAVide::rencontrerPlot() {
-	projet_robot::modele::robot::Robot::getSingleton().setEtat(EtatAVidefaceAPlot::getSingleton());
+EtatRobot* EtatAVide::rencontrerPlot() {
+	return EtatAVidefaceAPlot::getSingleton();
 }
 
-string projet_robot::modele::etats::EtatAVide::afficher() {
+string EtatAVide::afficher() {
 	return "Etat a vide\n";
+}
+
+EtatAVide* EtatAVide::getSingleton() {
+	return instance;
 }

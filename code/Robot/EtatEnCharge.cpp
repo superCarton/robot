@@ -1,22 +1,24 @@
 #include "EtatEnCharge.h"
+#include "EtatEnChargeFaceAPlot.h"
 
-projet_robot::modele::etats::EtatRobot& projet_robot::modele::etats::EtatRobot::instance = EtatEnCharge();
+EtatEnCharge* EtatEnCharge::instance = new EtatEnCharge;
 
-void projet_robot::modele::etats::EtatEnCharge::avancer() {
-	;
+EtatRobot* EtatEnCharge::avancer() {
+	return this;
 }
 
-void projet_robot::modele::etats::EtatEnCharge::peser() {
-	;
+EtatRobot* EtatEnCharge::peser() {
+	return this;
 }
 
-void projet_robot::modele::etats::EtatEnCharge::rencontrerPlot() {
-	projet_robot::modele::robot::Robot::getSingleton().setEtat(EtatEnChargeFaceAPlot::getSingleton());
+EtatRobot* EtatEnCharge::rencontrerPlot() {
+	return EtatEnChargeFaceAPlot::getSingleton();
 }
 
-string projet_robot::modele::etats::EtatEnCharge::afficher() {
-	string s="";
-	s += "Etat en charge\n";
-	s += "Poids de l'objet : " + projet_robot::modele::robot::Robot::getSingleton().getObjet().afficher() + "\n";
-	return s;
+string EtatEnCharge::afficher() {
+	return "Etat en charge\n";
+}
+
+EtatEnCharge* EtatEnCharge::getSingleton() {
+	return instance;
 }

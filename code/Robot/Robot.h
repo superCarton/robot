@@ -1,85 +1,69 @@
 #ifndef _ROBOT_H_
 #define _ROBOT_H_
 
-#include <stdio.h>
+using namespace std;
 #include "Position.h"
 #include "Plot.h"
+#include "Objet.h"
 #include "EtatRobot.h"
-#include "../vue/Afficheur.h"
-using namespace std;
-using namespace projet_robot::modele::etats;
-
-namespace projet_robot {
-	namespace modele {
-		namespace robot {
-			class Robot {
-
-			private:
-				static Robot& _instance_robot;
-				Position position;
-				Plot plot;
-				Objet objet;
-				char direction;
-				EtatRobot etat;
-				projet_robot::vue::Afficheur afficheur;
+#include "Afficheur.h"
+#include "EtatAVide.h"
 
 
-			public:
 
-				Robot() : position(0,0), direction('N') {};
+class Robot {
 
-				void avancer(int n);
+private:
+	Position position;
+	Plot plot;
+	Objet objet;
+	char direction;
+	EtatRobot* etat;
+	Afficheur afficheur;
 
-				void tourner(char dir);
+public:
 
-				void saisir();
+	Robot(int x=0, int y=0, Plot p=Plot(0), Objet o=Objet(0), char d='N',
+			EtatRobot* e=dynamic_cast<EtatRobot*>(EtatAVide::getSingleton()), Afficheur a=Afficheur()) :
+		position(Position(x,y)),
+		plot(p),
+		objet(o),
+		direction(d),
+		etat(e),
+		afficheur(a)
+	{};
 
-				void poser();
 
-				void rencontrerPlot(Plot p);
+	void avancer(int n);
 
-				int peser();
+	void tourner(char dir);
 
-				int evaluerPlot();
+	void saisir(Objet o);
 
-				void figer();
+	void poser();
 
-				void repartir();
+	void rencontrerPlot(Plot p);
 
-				string afficher();
+	int peser();
 
-				void setEtat(projet_robot::modele::etats::EtatRobot etat);
+	int evaluerPlot();
 
-				static Robot& getSingleton();
+	void figer();
 
-				void notify();
+	void repartir();
 
-				etats::EtatRobot getEtat();
+	string afficher();
 
-				Position getPosition();
+	void notify();
 
-				Objet getObjet();
+	Position getPosition();
 
-				Plot getPlot();
+	Objet getObjet();
 
-				void setObserveur(vue::Afficheur a);
+	Plot getPlot();
 
-				/**** Exception ****/
+	void setObserveur(Afficheur a);
 
-				class Marche_Arriere_Interdite{};
-				class Direction_Inconnue;
-				class Avancer_Exception{};
-				class Tourner_Exception{};
-				class Saisir_Exception{};
-				class Poser_Exception{};
-				class RencontrerPlot_Exception{};
-				class Peser_Exception{};
-				class EvaluerPlot_Exception{};
-				class Figer_Exception{};
-				class Repartir_Exception{};
-			};
-		}
-	}
-}
+};
 
 #endif // _ROBOT_H_

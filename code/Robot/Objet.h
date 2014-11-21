@@ -1,18 +1,20 @@
+#ifndef _OBJET_H_
+#define _OBJET_H_
+
+#include <string>
 using namespace std;
 
-namespace projet_robot {
-	namespace modele {
-		namespace robot {
-			class Objet {
+class Objet {
 
-			private:
-				int poids;
+private:
+	int poids;
 
-			public:
-				Objet(int p): poids(p){}
-				int getPoids();
-				string afficher();
-			};
-		}
+public:
+	Objet(int p) :
+			poids(p) {
 	}
-}
+	int getPoids();
+	string afficher();
+};
+
+#endif

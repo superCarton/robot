@@ -1,6 +1,7 @@
 #include "EtatEnRoute.h"
+#include "EtatFige.h"
 
-void projet_robot::modele::etats::EtatEnRoute::figer() {
-	dynamic_cast<EtatFige>(projet_robot::modele::etats::EtatFige::getSingleton()).setEtatPrecedent(*this);
-	projet_robot::modele::robot::Robot::getSingleton().setEtat(EtatFige::getSingleton());
+EtatRobot* EtatEnRoute::figer() {
+	EtatFige::getSingleton()->setEtatPrecedent(this);
+	return EtatFige::getSingleton();
 }

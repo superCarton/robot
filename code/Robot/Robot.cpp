@@ -1,14 +1,11 @@
 #include "Robot.h"
-using namespace std;
+#include "ExceptionRobot.h"
 
-projet_robot::modele::robot::Robot& projet_robot::modele::robot::Robot::_instance_robot = Robot();
-
-
-void projet_robot::modele::robot::Robot::avancer(int n) {
+void Robot::avancer(int n) {
 	try {
-		etat.avancer();
+		etat -> avancer();
 		if(n < 0) {
-			throw Marche_Arriere_Interdite();
+			throw ExceptionRobot::Marche_Arriere_Interdite();
 		}
 		else {
 			switch(direction) {
@@ -29,135 +26,121 @@ void projet_robot::modele::robot::Robot::avancer(int n) {
 					break;
 				}
 				default : {
-					throw Direction_Inconnue();
+					throw ExceptionRobot::Direction_Inconnue();
 					break;
 				}
 
 			}
 			notify();
 		}
-	} catch (Avancer_Exception& e) {
+	} catch (ExceptionRobot::Avancer_Exception& e) {
 		//Ce déplacement est impossible dans cette état
 	}
 
 
 }
 
-void projet_robot::modele::robot::Robot::tourner(char dir) {
+void Robot::tourner(char dir) {
 	try {
-		etat.tourner();
+		etat = etat ->tourner();
 		direction = dir;
 		notify();
-	} catch (Tourner_Exception& e) {
+	} catch (ExceptionRobot::Tourner_Exception& e) {
 		//Cette action est impossible dans cette état
 	}
 }
 
-void projet_robot::modele::robot::Robot::saisir() {
+void Robot::saisir(Objet o) {
 	try {
-		etat.saisir();
-		objet = plot.getObjet();
-		plot.setObjet(NULL);
+		etat = etat -> saisir();
+		objet = o;
 		notify();
-	} catch (Saisir_Exception& e) {
+	} catch (ExceptionRobot::Saisir_Exception& e) {
 		//Cette action est impossible dans cette état
 	}
 }
 
 
-void projet_robot::modele::robot::Robot::poser() {
+void Robot::poser() {
 	try {
-		etat.poser();
-		plot.setObjet(objet);
-		objet = NULL;
+		etat = etat -> poser();
+		objet = Objet(0);
 		notify();
-	} catch (Poser_Exception& e) {
+	} catch (ExceptionRobot::Poser_Exception& e) {
 		//Cette action est impossible dans cette état
 	}
 }
 
-void projet_robot::modele::robot::Robot::rencontrerPlot(Plot p) {
+void Robot::rencontrerPlot(Plot p) {
 	try {
-			etat.rencontrerPlot();
+			etat = etat -> rencontrerPlot();
 			plot = p;
 			notify();
-		} catch (RencontrerPlot_Exception& e) {
+		} catch (ExceptionRobot::RencontrerPlot_Exception& e) {
 			//Cette action est impossible dans cette état
 		}
 }
 
-int projet_robot::modele::robot::Robot::peser() {
+int Robot::peser() {
 	try {
-			etat.peser();
+			etat = etat -> peser();
 			return objet.getPoids();
-		} catch (Peser_Exception& e) {
+		} catch (ExceptionRobot::Peser_Exception& e) {
 			//Cette action est impossible dans cette état
 			return -1;
 		}
 }
 
-int projet_robot::modele::robot::Robot::evaluerPlot() {
+int Robot::evaluerPlot() {
 	try {
-			etat.peser();
+			etat = etat -> peser();
 			return plot.getHauteur();
-		} catch (EvaluerPlot_Exception& e) {
+		} catch (ExceptionRobot::EvaluerPlot_Exception& e) {
 			//Cette action est impossible dans cette état
 			return -1;
 		}
 }
 
-void projet_robot::modele::robot::Robot::figer() {
+void Robot::figer() {
 	try {
-			etat.figer();
+			etat = etat -> figer();
 			notify();
-		} catch (Figer_Exception& e) {
+		} catch (ExceptionRobot::Figer_Exception& e) {
 			//Cette action est impossible dans cette état
 		}
 }
 
-void projet_robot::modele::robot::Robot::repartir() {
+void Robot::repartir() {
 	try {
-			etat.repartir();
+			etat = etat -> repartir();
 			notify();
-		} catch (Repartir_Exception& e) {
+		} catch (ExceptionRobot::Repartir_Exception& e) {
 			//Cette action est impossible dans cette état
 		}
 }
 
-string projet_robot::modele::robot::Robot::afficher() {
+string Robot::afficher() {
 	string s;
-	s+= position.afficher()+"\n"+etat.afficher();
+	s+= position.afficher()+"\n"+etat -> afficher();
 	return s;
 }
 
-void projet_robot::modele::robot::Robot::setEtat(projet_robot::modele::etats::EtatRobot etat) {
-	this -> etat = etat;
+void Robot::notify() {
+	afficheur.update(this);
 }
 
-projet_robot::modele::robot::Robot& projet_robot::modele::robot::Robot::getSingleton() {
-	return _instance_robot;
-}
-
-void projet_robot::modele::robot::Robot::notify() {
-	afficheur.update(*this);
-}
-
-projet_robot::modele::etats::EtatRobot projet_robot::modele::robot::Robot::getEtat() {
-	return etat;
-}
-
-projet_robot::modele::robot::Position projet_robot::modele::robot::Robot::getPosition() {
+Position Robot::getPosition() {
 	return position;
 }
 
-projet_robot::modele::robot::Plot projet_robot::modele::robot::Robot::getPlot() {
+Plot Robot::getPlot() {
 	return plot;
 }
 
-projet_robot::modele::robot::Objet projet_robot::modele::robot::Robot::getObjet() {
+Objet Robot::getObjet() {
 	return objet;
 }
 
-void projet_robot::modele::robot::Robot::setObserveur(vue::Afficheur a) {
+void Robot::setObserveur(Afficheur a) {
 	afficheur = a;
 }

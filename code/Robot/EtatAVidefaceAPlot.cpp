@@ -1,22 +1,25 @@
-#include "Robot.h"
 #include "EtatAVidefaceAPlot.h"
+#include "EtatAVide.h"
+#include "EtatEnChargeFaceAPlot.h"
 
-projet_robot::modele::etats::EtatRobot& projet_robot::modele::etats::EtatRobot::instance = EtatAVidefaceAPlot();
+EtatAVidefaceAPlot* EtatAVidefaceAPlot::instance = new EtatAVidefaceAPlot;
 
-void projet_robot::modele::etats::EtatAVidefaceAPlot::tourner() {
-	projet_robot::modele::robot::Robot::getSingleton().setEtat(EtatAVide::getSingleton());
+EtatRobot* EtatAVidefaceAPlot::tourner() {
+	return EtatAVide::getSingleton();
 }
 
-void projet_robot::modele::etats::EtatAVidefaceAPlot::saisir() {
-	projet_robot::modele::robot::Robot::getSingleton().setEtat(EtatEnChargeFaceAPlot::getSingleton());
+EtatRobot* EtatAVidefaceAPlot::saisir() {
+	return EtatEnChargeFaceAPlot::getSingleton();
 }
 
-void projet_robot::modele::etats::EtatAVidefaceAPlot::evaluerPlot() {
+EtatRobot* EtatAVidefaceAPlot::evaluerPlot() {
+	return this;
 }
 
-string projet_robot::modele::etats::EtatAVidefaceAPlot::afficher() {
-	string s="";
-	s += "Etat a vide face a plot\n";
-	s += "Hauteur du plot : " + 	projet_robot::modele::robot::Robot::getSingleton().getPlot().afficher() + "\n";
-	return s;
+string EtatAVidefaceAPlot::afficher() {
+	return "Etat à vide face à plot\n";
+}
+
+EtatAVidefaceAPlot* EtatAVidefaceAPlot::getSingleton() {
+	return instance;
 }

@@ -1,22 +1,25 @@
-#include "EtatEnRoute.h"
+#ifndef _ETAT_A_VIDE_FACE_A_PLOT_H_
+#define _ETAT_A_VIDE_FACE_A_PLOT_H_
+
+#include <string>
 using namespace std;
+#include "EtatEnRoute.h"
 
-namespace projet_robot {
-	namespace modele {
-		namespace etats {
-			class EtatAVidefaceAPlot : projet_robot::modele::etats::EtatEnRoute {
+class EtatAVidefaceAPlot: public EtatEnRoute {
 
+private:
+	static EtatAVidefaceAPlot* instance;
 
-			public:
-				virtual void tourner();
+public:
+	EtatRobot* tourner();
 
-				virtual void saisir();
+	EtatRobot* saisir();
 
-				virtual void evaluerPlot();
+	EtatRobot* evaluerPlot();
 
-				virtual string afficher();
+	string afficher();
 
-			};
-		}
-	}
-}
+	static EtatAVidefaceAPlot* getSingleton();
+
+};
+#endif

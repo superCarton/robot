@@ -1,10 +1,10 @@
 #include "Objet.h"
 
-int projet_robot::modele::robot::Objet::getPoids() {
+int Objet::getPoids() {
 	return this->poids;
 }
 
-string projet_robot::modele::robot::Objet::afficher() {
+string Objet::afficher() {
 	string s;
 	s+="Poids de l'objet :"+getPoids();
 	return s;

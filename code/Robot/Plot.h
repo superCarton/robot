@@ -1,23 +1,20 @@
-#include "Objet.h"
+#ifndef _PLOT_H_
+#define _PLOT_H_
+
 #include <string>
 using namespace std;
 
-namespace projet_robot {
-	namespace modele {
-		namespace robot {
-			class Plot {
+class Plot {
 
-			private:
-				int hauteur;
-				Objet objet;
+private:
+	int hauteur;
 
-			public:
-				Plot(int h, Objet obj) : hauteur(h), objet(obj){}
-				int getHauteur();
-				Objet getObjet();
-				void setObjet(Objet o);
-				string afficher();
-			};
-		}
+public:
+	Plot(int h =0) :
+			hauteur(h) {
 	}
-}
+	int getHauteur();
+	string afficher();
+};
+
+#endif

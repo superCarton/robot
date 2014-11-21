@@ -2,19 +2,18 @@
 #include "Objet.h"
 #include "Afficheur.h"
 #include "Robot.h"
-#include <stdio>
 
 using namespace std;
 
 int main(int argc, char *argv[]) 
 { 
-	projet_robot::vue::Afficheur afficheur;
-	projet_robot::modele::robot::Robot robot;
-	afficheur.setObservable(robot);
+	Afficheur afficheur;
+	Robot robot;
+	afficheur.setObservable(&robot);
 	robot.setObserveur(afficheur);
-	projet_robot::modele::robot::Objet o1(2);
-	projet_robot::modele::robot::Plot p1(20, o1);
-	projet_robot::modele::robot::Plot p2(35, NULL);
+	Objet o1(2);
+	Plot p1(20);
+	Plot p2(35);
 
 	/* cas nominal */
 	robot.tourner('E');
@@ -23,7 +22,7 @@ int main(int argc, char *argv[])
 	robot.avancer(1);
 	robot.rencontrerPlot(p1);
 	cout << "Taille du plot : " << robot.evaluerPlot();
-	robot.saisir();
+	robot.saisir(o1);
 	cout << " Poids de l'objet : " << robot.peser() << endl;
 	robot.tourner('S');
 	robot.avancer(1);

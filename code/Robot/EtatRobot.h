@@ -1,36 +1,31 @@
+#ifndef _ETATROBOT_H_
+#define _ETATROBOT_H_
+
 using namespace std;
+#include <string>
 
-namespace projet_robot {
-	namespace modele {
-		namespace etats {
-			class EtatRobot {
+class EtatRobot {
 
-			protected:
-				static EtatRobot& instance;
+public:
+	EtatRobot* avancer();
 
-			public:
-				void avancer();
+	EtatRobot* tourner();
 
-				void tourner();
+	EtatRobot* saisir();
 
-				void saisir();
+	EtatRobot* poser();
 
-				void poser();
+	EtatRobot* peser();
 
-				void peser();
+	EtatRobot* rencontrerPlot();
 
-				void rencontrerPlot();
+	EtatRobot* evaluerPlot();
 
-				void evaluerPlot();
+	EtatRobot* figer();
 
-				void figer();
+	EtatRobot* repartir();
 
-				void repartir();
+	string afficher();
+};
 
-				string afficher();
-
-				static projet_robot::modele::etats::EtatRobot& getSingleton();
-			};
-		}
-	}
-}
+#endif

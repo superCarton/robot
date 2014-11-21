@@ -1,14 +1,13 @@
+#ifndef _ETAT_EN_ROUTE_H_
+#define _ETAT_EN_ROUTE_H_
+
 #include "EtatRobot.h"
+class EtatFige;
 
-namespace projet_robot {
-	namespace modele {
-		namespace etats {
-			class EtatEnRoute : projet_robot::modele::etats::EtatRobot {
+class EtatEnRoute: public EtatRobot {
 
+public:
+	EtatRobot* figer();
+};
 
-			public:
-				void figer();
-			};
-		}
-	}
-}
+#endif

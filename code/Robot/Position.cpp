@@ -1,23 +1,25 @@
 #include "Position.h"
 
-void projet_robot::modele::robot::Position::setx(int x) {
+void Position::setx(int x) {
 	this->x = x;
 }
 
-void projet_robot::modele::robot::Position::sety(int y) {
+void Position::sety(int y) {
 	this->y = y;
 }
 
-int projet_robot::modele::robot::Position::getx() {
+int Position::getx() {
 	return this->x;
 }
 
-int projet_robot::modele::robot::Position::gety() {
+int Position::gety() {
 	return this->y;
 }
 
-string projet_robot::modele::robot::Position::afficher() {
+string Position::afficher() {
 	string s;
-	s+="position : ["+getx()+", "+gety()+"]";
+	s+="position : ["+ getx();
+	s+=", "+ gety();
+	s+="]";
 	return s;
 }

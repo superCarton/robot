@@ -1,20 +1,20 @@
 #include "Afficheur.h"
-#include <iostream>
+#include "Robot.h"
 
-void projet_robot::vue::Afficheur::update(projet_robot::modele::robot::Robot r) {
+void Afficheur::update(Robot* r) {
 	this->obs=r;
 	afficher();
 }
 
-void projet_robot::vue::Afficheur::afficher() {
+void Afficheur::afficher() {
 	if (obs == NULL){
 		cout << "Aucun robot à afficher" << endl;
 	} else {
-		cout << obs.afficher() << endl;
+		cout << obs->afficher() << endl;
 	}
 }
 
-void projet_robot::vue::Afficheur::setObservable(projet_robot::modele::robot::Robot r) {
+void Afficheur::setObservable(Robot* r) {
 	this->obs=r;
 }
 

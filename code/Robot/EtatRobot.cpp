@@ -1,46 +1,42 @@
 #include "EtatRobot.h"
+#include "ExceptionRobot.h"
 
-
-void projet_robot::modele::etats::EtatRobot::avancer() {
-	throw robot::Robot::Avancer_Exception();
+EtatRobot* EtatRobot::avancer() {
+	throw ExceptionRobot::Avancer_Exception();
 }
 
-void projet_robot::modele::etats::EtatRobot::tourner() {
-	throw robot::Robot::Tourner_Exception();
+EtatRobot* EtatRobot::tourner() {
+	throw ExceptionRobot::Tourner_Exception();
 }
 
-void projet_robot::modele::etats::EtatRobot::saisir() {
-	throw robot::Robot::Saisir_Exception();
+EtatRobot* EtatRobot::saisir() {
+	throw ExceptionRobot::Saisir_Exception();
 }
 
-void projet_robot::modele::etats::EtatRobot::poser() {
-	throw robot::Robot::Poser_Exception();
+EtatRobot* EtatRobot::poser() {
+	throw ExceptionRobot::Poser_Exception();
 }
 
-void projet_robot::modele::etats::EtatRobot::peser() {
-	throw robot::Robot::Peser_Exception();
+EtatRobot* EtatRobot::peser() {
+	throw ExceptionRobot::Peser_Exception();
 }
 
-void projet_robot::modele::etats::EtatRobot::rencontrerPlot() {
-	throw robot::Robot::RencontrerPlot_Exception();
+EtatRobot* EtatRobot::rencontrerPlot() {
+	throw ExceptionRobot::RencontrerPlot_Exception();
 }
 
-void projet_robot::modele::etats::EtatRobot::evaluerPlot() {
-	throw robot::Robot::EvaluerPlot_Exception();
+EtatRobot* EtatRobot::evaluerPlot() {
+	throw ExceptionRobot::EvaluerPlot_Exception();
 }
 
-void projet_robot::modele::etats::EtatRobot::figer() {
-	throw robot::Robot::Figer_Exception();
+EtatRobot* EtatRobot::figer() {
+	throw ExceptionRobot::Figer_Exception();
 }
 
-void projet_robot::modele::etats::EtatRobot::repartir() {
-	throw robot::Robot::Repartir_Exception();
+EtatRobot* EtatRobot::repartir() {
+	throw ExceptionRobot::Repartir_Exception();
 }
 
-string projet_robot::modele::etats::EtatRobot::afficher() {
+string EtatRobot::afficher() {
 	return "Etat robot --> ne doit pas etre appelé";
-}
-
-projet_robot::modele::etats::EtatRobot& projet_robot::modele::etats::EtatRobot::getSingleton() {
-	return instance;
 }
