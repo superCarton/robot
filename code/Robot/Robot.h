@@ -5,7 +5,7 @@
 #include "Position.h"
 #include "Plot.h"
 #include "EtatRobot.h"
-#include "Afficheur.h"
+#include "../vue/Afficheur.h"
 using namespace std;
 using namespace projet_robot::modele::etats;
 
