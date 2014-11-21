@@ -1,5 +1,15 @@
-#include <vector>
+/*
+ * Afficheur.h
+ *
+ *  Created on: 20 nov. 2014
+ *      Author: jonathan
+ */
+
+#ifndef AFFICHEUR_H_
+#define AFFICHEUR_H_
+
 #include <stdio.h>
+#include "Robot.h"
 
 using namespace std;
 
@@ -7,17 +17,20 @@ namespace projet_robot {
 	namespace vue {
 		class Afficheur {
 
+
 		private:
-			projet_robot::modele::robot::Robot observable;
+		modele::robot::Robot obs;
 
 		public:
-			Afficheur() : observable(NULL){}
+		Afficheur() : obs(NULL){}
 
-			void update(projet_robot::modele::robot::Robot r);
+		void update(modele::robot::Robot r);
 
-			void afficher();
+		void afficher();
 
-			void set_observable(projet_robot::modele::robot::Robot r);
+		void setObservable(modele::robot::Robot r);
 		};
 	}
 }
+
+#endif /* AFFICHEUR_H_ */

@@ -53,10 +53,11 @@ void projet_robot::modele::robot::Robot::tourner(char dir) {
 	}
 }
 
-void projet_robot::modele::robot::Robot::saisir(projet_robot::modele::robot::Objet o) {
+void projet_robot::modele::robot::Robot::saisir() {
 	try {
 		etat.saisir();
-		objet = o;
+		objet = plot.getObjet();
+		plot.setObjet(NULL);
 		notify();
 	} catch (Saisir_Exception& e) {
 		//Cette action est impossible dans cette état
@@ -67,6 +68,7 @@ void projet_robot::modele::robot::Robot::saisir(projet_robot::modele::robot::Obj
 void projet_robot::modele::robot::Robot::poser() {
 	try {
 		etat.poser();
+		plot.setObjet(objet);
 		objet = NULL;
 		notify();
 	} catch (Poser_Exception& e) {

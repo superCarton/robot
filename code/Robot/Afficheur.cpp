@@ -2,18 +2,19 @@
 #include <iostream>
 
 void projet_robot::vue::Afficheur::update(projet_robot::modele::robot::Robot r) {
-	this->observable=r;
+	this->obs=r;
 	afficher();
 }
 
 void projet_robot::vue::Afficheur::afficher() {
-	if (observable == NULL){
+	if (obs == NULL){
 		cout << "Aucun robot à afficher" << endl;
 	} else {
-		cout << observable.afficher() << endl;
+		cout << obs.afficher() << endl;
 	}
 }
 
-void projet_robot::vue::Afficheur::set_observable(projet_robot::modele::robot::Robot r) {
-	this->observable=r;
+void projet_robot::vue::Afficheur::setObservable(projet_robot::modele::robot::Robot r) {
+	this->obs=r;
 }
+

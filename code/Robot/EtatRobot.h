@@ -29,7 +29,7 @@ namespace projet_robot {
 
 				string afficher();
 
-				virtual static projet_robot::modele::etats::EtatRobot& getSingleton();
+				static projet_robot::modele::etats::EtatRobot& getSingleton();
 			};
 		}
 	}

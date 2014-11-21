@@ -8,13 +8,13 @@ using namespace std;
 
 int main(int argc, char *argv[]) 
 { 
-	Afficheur afficheur;
-	Robot robot;
+	projet_robot::vue::Afficheur afficheur;
+	projet_robot::modele::robot::Robot robot;
 	afficheur.setObservable(robot);
 	robot.setObserveur(afficheur);
-	Objet o1(2);
-	Plot p1(20, o1);
-	Plot p2(35, NULL);
+	projet_robot::modele::robot::Objet o1(2);
+	projet_robot::modele::robot::Plot p1(20, o1);
+	projet_robot::modele::robot::Plot p2(35, NULL);
 
 	/* cas nominal */
 	robot.tourner('E');

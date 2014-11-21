@@ -1,5 +1,5 @@
-#include "Robot.h";
-#include "EtatAVidefaceAPlot.h";
+#include "Robot.h"
+#include "EtatAVidefaceAPlot.h"
 
 projet_robot::modele::etats::EtatRobot& projet_robot::modele::etats::EtatRobot::instance = EtatAVidefaceAPlot();
 

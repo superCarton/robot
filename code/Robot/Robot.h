@@ -1,8 +1,13 @@
 #ifndef _ROBOT_H_
 #define _ROBOT_H_
 
-#import <stdio.h>;
+#include <stdio.h>
+#include "Position.h"
+#include "Plot.h"
+#include "EtatRobot.h"
+#include "Afficheur.h"
 using namespace std;
+using namespace projet_robot::modele::etats;
 
 namespace projet_robot {
 	namespace modele {
@@ -15,19 +20,19 @@ namespace projet_robot {
 				Plot plot;
 				Objet objet;
 				char direction;
-				etats::EtatRobot etat;
-				vue::Afficheur afficheur;
+				EtatRobot etat;
+				projet_robot::vue::Afficheur afficheur;
 
 
 			public:
 
-				Robot() : position(0,0), plot(NULL), objet(NULL), direction('N') {};
+				Robot() : position(0,0), direction('N') {};
 
 				void avancer(int n);
 
 				void tourner(char dir);
 
-				void saisir(Objet o);
+				void saisir();
 
 				void poser();
 

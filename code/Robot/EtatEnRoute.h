@@ -1,4 +1,4 @@
-#include "EtatRobot.h";
+#include "EtatRobot.h"
 
 namespace projet_robot {
 	namespace modele {

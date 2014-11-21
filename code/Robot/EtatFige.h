@@ -8,7 +8,7 @@
 #ifndef CODE_ROBOT_ETATFIGE_H_
 #define CODE_ROBOT_ETATFIGE_H_
 
-#include "EtatRobot.h";
+#include "EtatRobot.h"
 using namespace std;
 
 namespace projet_robot {

@@ -1,3 +1,5 @@
+#include "Objet.h"
+#include <string>
 using namespace std;
 
 namespace projet_robot {
