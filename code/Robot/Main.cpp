@@ -14,10 +14,10 @@ int main(int argc, char *argv[])
 	Objet o1(2);
 	Plot p1(20);
 	Plot p2(35);
+	cout << "etat" << robot.getEtat()->afficher() << endl;
 
-	/* cas nominal */
 	robot.tourner('E');
-	robot.avancer(3);
+	/*robot.avancer(3);
 	robot.tourner('N');
 	robot.avancer(1);
 	robot.rencontrerPlot(p1);
@@ -35,9 +35,11 @@ int main(int argc, char *argv[])
 	robot.tourner('O');
 	robot.avancer(3);
 	robot.tourner('S');
-	robot.avancer(1);
+	robot.avancer(1);*/
 
 	/* cas d'erreur */
+
+	cout << "/**** FIN ****/" << endl;
 		
 	
 }

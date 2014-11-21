@@ -35,6 +35,7 @@ void Robot::avancer(int n) {
 		}
 	} catch (ExceptionRobot::Avancer_Exception& e) {
 		//Ce déplacement est impossible dans cette état
+		cout << "exception avancer" << endl;
 	}
 
 
@@ -42,10 +43,12 @@ void Robot::avancer(int n) {
 
 void Robot::tourner(char dir) {
 	try {
+		cout << "tourner robot" << endl;
 		etat = etat ->tourner();
 		direction = dir;
 		notify();
 	} catch (ExceptionRobot::Tourner_Exception& e) {
+		cout << "tourner exception" << endl;
 		//Cette action est impossible dans cette état
 	}
 }
@@ -120,12 +123,14 @@ void Robot::repartir() {
 }
 
 string Robot::afficher() {
+	cout << "afficher robot" << endl;
 	string s;
-	s+= position.afficher()+"\n"+etat -> afficher();
+	s+= position.afficher();//+"\n"+etat -> afficher();
 	return s;
 }
 
 void Robot::notify() {
+	cout << "notify" << endl;
 	afficheur.update(this);
 }
 

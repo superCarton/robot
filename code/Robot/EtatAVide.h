@@ -13,12 +13,13 @@ private:
 	static EtatAVide* instance;
 
 public:
+	virtual EtatRobot* tourner();
 
-	EtatRobot* avancer();
+	virtual EtatRobot* avancer();
 
-	EtatRobot* rencontrerPlot();
+	virtual EtatRobot* rencontrerPlot();
 
-	string afficher();
+	virtual string afficher();
 
 	static EtatAVide* getSingleton();
 

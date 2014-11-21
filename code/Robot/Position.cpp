@@ -16,10 +16,6 @@ int Position::gety() {
 	return this->y;
 }
 
-string Position::afficher() {
-	string s;
-	s+="position : ["+ getx();
-	s+=", "+ gety();
-	s+="]";
-	return s;
+std::ostream& operator<<(std::ostream& os, const Position& p){
+    return os << "[" << p.x << ", " << p.y << "]" << endl;
 }

@@ -3,6 +3,9 @@
 
 EtatAVide* EtatAVide::instance = new EtatAVide;
 
+EtatRobot* EtatAVide::tourner() {
+	return this;
+}
 
 EtatRobot* EtatAVide::avancer() { return this;}
 

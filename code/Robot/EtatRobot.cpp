@@ -1,5 +1,9 @@
 #include "EtatRobot.h"
 #include "ExceptionRobot.h"
+#include "EtatAVide.h"
+
+
+EtatRobot* EtatRobot::premierEtat = EtatAVide::getSingleton();
 
 EtatRobot* EtatRobot::avancer() {
 	throw ExceptionRobot::Avancer_Exception();
@@ -39,4 +43,8 @@ EtatRobot* EtatRobot::repartir() {
 
 string EtatRobot::afficher() {
 	return "Etat robot --> ne doit pas etre appelé";
+}
+
+EtatRobot* EtatRobot::getIni() {
+	return premierEtat;
 }

@@ -24,7 +24,7 @@ private:
 public:
 
 	Robot(int x=0, int y=0, Plot p=Plot(0), Objet o=Objet(0), char d='N',
-			EtatRobot* e=dynamic_cast<EtatRobot*>(EtatAVide::getSingleton()), Afficheur a=Afficheur()) :
+			EtatRobot* e=EtatRobot::getIni(), Afficheur a=Afficheur()) :
 		position(Position(x,y)),
 		plot(p),
 		objet(o),
@@ -33,6 +33,7 @@ public:
 		afficheur(a)
 	{};
 
+	EtatRobot* getEtat(){return etat;};
 
 	void avancer(int n);
 

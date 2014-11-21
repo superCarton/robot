@@ -7,7 +7,7 @@ class EtatFige;
 class EtatEnRoute: public EtatRobot {
 
 public:
-	EtatRobot* figer();
+	virtual EtatRobot* figer();
 };
 
 #endif

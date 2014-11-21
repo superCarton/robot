@@ -22,6 +22,6 @@ public:
 
 	int gety();
 
-	string afficher();
+	friend std::ostream& operator<<(std::ostream&, const Position&);
 };
 #endif
