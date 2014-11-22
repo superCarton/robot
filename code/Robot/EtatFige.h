@@ -21,8 +21,8 @@ private:
 public:
 	EtatRobot* repartir();
 	void setEtatPrecedent(EtatEnRoute*);
-	string afficher();
 	static EtatFige* getSingleton();
+	virtual string getNomEtat() {return "Etat figé";};
 };
 
 #endif /* CODE_ROBOT_ETATFIGE_H_ */

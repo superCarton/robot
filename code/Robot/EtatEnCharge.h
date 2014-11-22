@@ -16,9 +16,9 @@ public:
 
 	EtatRobot* rencontrerPlot();
 
-	string afficher();
-
 	static EtatEnCharge* getSingleton();
+
+	virtual string getNomEtat() {return "Etat en charge";};
 };
 
 #endif

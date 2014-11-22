@@ -53,7 +53,7 @@ public:
 
 	void repartir();
 
-	string afficher();
+	void afficher();
 
 	void notify();
 

@@ -2,6 +2,7 @@
 #define _PLOT_H_
 
 #include <string>
+#include <ostream>
 using namespace std;
 
 class Plot {
@@ -14,7 +15,8 @@ public:
 			hauteur(h) {
 	}
 	int getHauteur();
-	string afficher();
+
+	friend ostream& operator<<(ostream&, const Plot&);
 };
 
 #endif

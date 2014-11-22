@@ -17,9 +17,9 @@ public:
 
 	EtatRobot* evaluerPlot();
 
-	string afficher();
-
 	static EtatAVidefaceAPlot* getSingleton();
+
+	virtual string getNomEtat() {return "Etat à vide face à plot";};
 
 };
 #endif

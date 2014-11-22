@@ -16,9 +16,9 @@ public:
 
 	EtatRobot* peser();
 
-	string afficher();
-
 	static EtatEnChargeFaceAPlot* getSingleton();
+
+	virtual string getNomEtat() {return "Etat en charge face à plot";};
 };
 
 #endif

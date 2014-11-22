@@ -19,10 +19,9 @@ public:
 
 	virtual EtatRobot* rencontrerPlot();
 
-	virtual string afficher();
-
 	static EtatAVide* getSingleton();
 
+	virtual string getNomEtat() {return "Etat à vide";};
 };
 
 #endif

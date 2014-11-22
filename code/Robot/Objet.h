@@ -2,7 +2,9 @@
 #define _OBJET_H_
 
 #include <string>
+#include <ostream>
 using namespace std;
+
 
 class Objet {
 
@@ -10,11 +12,9 @@ private:
 	int poids;
 
 public:
-	Objet(int p) :
-			poids(p) {
-	}
+	Objet(int p=0) : poids(p) {}
 	int getPoids();
-	string afficher();
+	friend ostream& operator<<(ostream&, const Objet&);
 };
 
 #endif

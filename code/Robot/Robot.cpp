@@ -10,19 +10,23 @@ void Robot::avancer(int n) {
 		else {
 			switch(direction) {
 				case 'N' : {
-					position.sety(n);
+					int act = position.gety();
+					position.sety(act+n);
 					break;
 				}
 				case 'S' : {
-					position.sety(-n);
+					int act = position.gety();
+					position.sety(act-n);
 					break;
 				}
 				case 'E' : {
-					position.setx(n);
+					int act = position.getx();
+					position.setx(act+n);
 					break;
 				}
 				case 'O' : {
-					position.setx(-n);
+					int act = position.getx();
+					position.setx(act-n);
 					break;
 				}
 				default : {
@@ -34,8 +38,8 @@ void Robot::avancer(int n) {
 			notify();
 		}
 	} catch (ExceptionRobot::Avancer_Exception& e) {
-		//Ce déplacement est impossible dans cette état
-		cout << "exception avancer" << endl;
+		//Ce déplacement est impossible dans cet état
+		cerr << " Impossible d'avancer dans cet état" << endl;
 	}
 
 
@@ -43,13 +47,13 @@ void Robot::avancer(int n) {
 
 void Robot::tourner(char dir) {
 	try {
-		cout << "tourner robot" << endl;
 		etat = etat ->tourner();
 		direction = dir;
+		plot = Plot(0);
 		notify();
 	} catch (ExceptionRobot::Tourner_Exception& e) {
-		cout << "tourner exception" << endl;
-		//Cette action est impossible dans cette état
+		cerr << "Impossible de tourner dans cet état" << endl;
+		//Cette action est impossible dans cet état
 	}
 }
 
@@ -59,7 +63,8 @@ void Robot::saisir(Objet o) {
 		objet = o;
 		notify();
 	} catch (ExceptionRobot::Saisir_Exception& e) {
-		//Cette action est impossible dans cette état
+		cerr << "Impossible de saisir dans cet état" << endl;
+		//Cette action est impossible dans cet état
 	}
 }
 
@@ -70,7 +75,8 @@ void Robot::poser() {
 		objet = Objet(0);
 		notify();
 	} catch (ExceptionRobot::Poser_Exception& e) {
-		//Cette action est impossible dans cette état
+		cerr << "Impossible de poser dans cet état" << endl;
+		//Cette action est impossible dans cet état
 	}
 }
 
@@ -80,7 +86,8 @@ void Robot::rencontrerPlot(Plot p) {
 			plot = p;
 			notify();
 		} catch (ExceptionRobot::RencontrerPlot_Exception& e) {
-			//Cette action est impossible dans cette état
+			cerr << "Impossible de rencontrer un plot dans cet état" << endl;
+			//Cette action est impossible dans cet état
 		}
 }
 
@@ -89,17 +96,19 @@ int Robot::peser() {
 			etat = etat -> peser();
 			return objet.getPoids();
 		} catch (ExceptionRobot::Peser_Exception& e) {
-			//Cette action est impossible dans cette état
+			cerr << "Impossible de peser dans cet état" << endl;
+			//Cette action est impossible dans cet état
 			return -1;
 		}
 }
 
 int Robot::evaluerPlot() {
 	try {
-			etat = etat -> peser();
+			etat = etat -> evaluerPlot();
 			return plot.getHauteur();
 		} catch (ExceptionRobot::EvaluerPlot_Exception& e) {
-			//Cette action est impossible dans cette état
+			cerr << "Impossible d'évaluer un plot dans cet état" << endl;
+			//Cette action est impossible dans cet état
 			return -1;
 		}
 }
@@ -109,7 +118,8 @@ void Robot::figer() {
 			etat = etat -> figer();
 			notify();
 		} catch (ExceptionRobot::Figer_Exception& e) {
-			//Cette action est impossible dans cette état
+			cerr << "Impossible de se figer dans cet état" << endl;
+			//Cette action est impossible dans cet état
 		}
 }
 
@@ -118,19 +128,23 @@ void Robot::repartir() {
 			etat = etat -> repartir();
 			notify();
 		} catch (ExceptionRobot::Repartir_Exception& e) {
-			//Cette action est impossible dans cette état
+			cerr << "Impossible de repartir dans cet état" << endl;
+			//Cette action est impossible dans cet état
 		}
 }
 
-string Robot::afficher() {
-	cout << "afficher robot" << endl;
-	string s;
-	s+= position.afficher();//+"\n"+etat -> afficher();
-	return s;
+void Robot::afficher() {
+	string direct = (direction =='N') ? "Nord" : ((direction =='E') ? "Est" : ((direction =='S') ? "Sud" : "Ouest"));
+	cout << "/**** Information Robot ****/" << endl;
+	cout << "\tETAT COURANT : " << etat -> getNomEtat() << endl;
+	cout << "\t\t" << position;
+	cout << "\t\tDIRECTION :  " <<  direct << endl;
+	cout << "\t\t" << objet;
+	cout << "\t\t" << plot;
+	cout << "\n***************************************************\n" << endl << endl;
 }
 
 void Robot::notify() {
-	cout << "notify" << endl;
 	afficheur.update(this);
 }
 

@@ -2,6 +2,7 @@
 #define POSITION_H_
 
 #include <string>
+#include <ostream>
 using namespace std;
 
 class Position {
@@ -22,6 +23,6 @@ public:
 
 	int gety();
 
-	friend std::ostream& operator<<(std::ostream&, const Position&);
+	friend ostream& operator<<(ostream&, const Position&);
 };
 #endif

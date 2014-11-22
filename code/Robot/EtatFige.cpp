@@ -17,11 +17,6 @@ void EtatFige::setEtatPrecedent(EtatEnRoute* e){
 	etatPrecedent = e;
 }
 
-string EtatFige::afficher() {
-	return "Etat figé\n";
-}
-
 EtatFige* EtatFige::getSingleton() {
 	return instance;
 }
-

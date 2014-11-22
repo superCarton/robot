@@ -15,10 +15,6 @@ EtatRobot* EtatEnCharge::rencontrerPlot() {
 	return EtatEnChargeFaceAPlot::getSingleton();
 }
 
-string EtatEnCharge::afficher() {
-	return "Etat en charge\n";
-}
-
 EtatEnCharge* EtatEnCharge::getSingleton() {
 	return instance;
 }

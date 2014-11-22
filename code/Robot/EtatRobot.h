@@ -3,6 +3,7 @@
 
 using namespace std;
 #include <string>
+#include <ostream>
 
 class EtatRobot {
 
@@ -29,9 +30,12 @@ public:
 
 	virtual EtatRobot* repartir();
 
-	virtual string afficher();
-
 	static EtatRobot* getIni();
+
+	friend ostream& operator<<(ostream&, const EtatRobot&);
+
+	virtual string getNomEtat() {return "rien";};
+
 
 };
 

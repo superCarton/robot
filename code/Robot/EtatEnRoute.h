@@ -8,6 +8,7 @@ class EtatEnRoute: public EtatRobot {
 
 public:
 	virtual EtatRobot* figer();
+	friend ostream& operator<<(ostream&, const EtatEnRoute&);
 };
 
 #endif

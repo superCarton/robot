@@ -16,13 +16,8 @@ EtatRobot* EtatEnChargeFaceAPlot::peser() {
 	return this;
 }
 
-string EtatEnChargeFaceAPlot::afficher() {
-	return "Etat en charge face à plot";
-}
-
 EtatEnChargeFaceAPlot* EtatEnChargeFaceAPlot::getSingleton() {
 	return instance;
 }
-
 
 

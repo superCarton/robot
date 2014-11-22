@@ -41,10 +41,10 @@ EtatRobot* EtatRobot::repartir() {
 	throw ExceptionRobot::Repartir_Exception();
 }
 
-string EtatRobot::afficher() {
-	return "Etat robot --> ne doit pas etre appelé";
-}
-
 EtatRobot* EtatRobot::getIni() {
 	return premierEtat;
+}
+
+ostream& operator<<(ostream& o, const EtatRobot& e) {
+	return o << "Ne doit pas être appelé"<< endl;
 }

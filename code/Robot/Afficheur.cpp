@@ -3,7 +3,6 @@
 
 void Afficheur::update(Robot* r) {
 	this->obs=r;
-	cout << "update" << endl;
 	afficher();
 }
 
@@ -11,8 +10,7 @@ void Afficheur::afficher() {
 	if (obs == NULL){
 		cout << "Aucun robot à afficher" << endl;
 	} else {
-		cout << "afficher afficheur" << endl;
-		cout << (obs->afficher()) << endl;
+		obs->afficher();
 	}
 }
 

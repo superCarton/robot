@@ -16,6 +16,6 @@ int Position::gety() {
 	return this->y;
 }
 
-std::ostream& operator<<(std::ostream& os, const Position& p){
-    return os << "[" << p.x << ", " << p.y << "]" << endl;
+ostream& operator<<(ostream& os, const Position& p){
+    return os <<"La position actuelle du robot est : [" << p.x << ", " << p.y << "]" << endl;
 }

@@ -16,10 +16,6 @@ EtatRobot* EtatAVidefaceAPlot::evaluerPlot() {
 	return this;
 }
 
-string EtatAVidefaceAPlot::afficher() {
-	return "Etat à vide face à plot\n";
-}
-
 EtatAVidefaceAPlot* EtatAVidefaceAPlot::getSingleton() {
 	return instance;
 }
