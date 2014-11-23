@@ -8,32 +8,39 @@ using namespace std;
 #include "EtatRobot.h"
 #include "Afficheur.h"
 #include "EtatAVide.h"
+#include <vector>
 
 
 
 class Robot {
 
 private:
+	static int MAX_OBSERVERS=2;
 	Position position;
 	Plot plot;
 	Objet objet;
 	char direction;
 	EtatRobot* etat;
-	Afficheur afficheur;
+	vector<Afficheur*> afficheurs;
 
 public:
 
 	Robot(int x=0, int y=0, Plot p=Plot(0), Objet o=Objet(0), char d='N',
-			EtatRobot* e=EtatRobot::getIni(), Afficheur a=Afficheur()) :
+			EtatRobot* e=EtatRobot::getIni()) :
 		position(Position(x,y)),
 		plot(p),
 		objet(o),
 		direction(d),
 		etat(e),
-		afficheur(a)
+		afficheurs(MAX_OBSERVERS, 0)
 	{};
 
 	EtatRobot* getEtat(){return etat;};
+
+	Position* getPosition(){return *position;}
+	Plot* getPlot(){return *plot;}
+	Objet* getObjet(){return *objet;}
+	char getDirection(){return direction;}
 
 	void avancer(int n);
 
@@ -53,17 +60,15 @@ public:
 
 	void repartir();
 
-	void afficher();
-
 	void notify();
 
-	Position getPosition();
+	/*Position getPosition();
 
 	Objet getObjet();
 
-	Plot getPlot();
+	Plot getPlot();*/
 
-	void setObserveur(Afficheur a);
+	void addObserveur(Afficheur* a);
 
 };
 

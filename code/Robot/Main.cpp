@@ -5,12 +5,12 @@
 
 using namespace std;
 
-int main(int argc, char *argv[]) 
-{ 
+int main(int argc, char *argv[])
+{
 	Afficheur afficheur;
 	Robot robot;
 	afficheur.setObservable(&robot);
-	robot.setObserveur(afficheur);
+	robot.addObserveur(&afficheur);
 	Objet o1(2);
 	Plot p1(20);
 	Plot p2(35);
@@ -40,6 +40,6 @@ int main(int argc, char *argv[])
 	/* cas d'erreur */
 
 	cout << "/**** FIN ****/" << endl;
-		
-	
+
+
 }

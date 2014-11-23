@@ -133,33 +133,17 @@ void Robot::repartir() {
 		}
 }
 
-void Robot::afficher() {
-	string direct = (direction =='N') ? "Nord" : ((direction =='E') ? "Est" : ((direction =='S') ? "Sud" : "Ouest"));
-	cout << "/**** Information Robot ****/" << endl;
-	cout << "\tETAT COURANT : " << etat -> getNomEtat() << endl;
-	cout << "\t\t" << position;
-	cout << "\t\tDIRECTION :  " <<  direct << endl;
-	cout << "\t\t" << objet;
-	cout << "\t\t" << plot;
-	cout << "\n***************************************************\n" << endl << endl;
-}
-
 void Robot::notify() {
-	afficheur.update(this);
+	for (Afficheur* a : afficheurs){
+		a->update(this);
+	}
 }
 
-Position Robot::getPosition() {
-	return position;
-}
-
-Plot Robot::getPlot() {
-	return plot;
-}
-
-Objet Robot::getObjet() {
-	return objet;
-}
-
-void Robot::setObserveur(Afficheur a) {
-	afficheur = a;
+void Robot::addObserveur(Afficheur* a) {
+	for (int i=0; i<MAX_OBSERVERS; i++){
+		if (afficheurs[i]==0){
+			afficheurs[i] = a;
+			return;
+		}
+	}
 }
