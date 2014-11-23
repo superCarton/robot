@@ -1,6 +1,8 @@
 #include "Robot.h"
 #include "ExceptionRobot.h"
 
+int Robot::MAX_OBSERVERS = 2;
+
 void Robot::avancer(int n) {
 	try {
 		etat -> avancer();
@@ -134,14 +136,17 @@ void Robot::repartir() {
 }
 
 void Robot::notify() {
-	for (Afficheur* a : afficheurs){
-		a->update(this);
+	int i=0;
+	for (int i=0; i<MAX_OBSERVERS; i++){
+		if (afficheurs[i]!=NULL){
+			afficheurs[i]->update(this);
+		}
 	}
 }
 
 void Robot::addObserveur(Afficheur* a) {
 	for (int i=0; i<MAX_OBSERVERS; i++){
-		if (afficheurs[i]==0){
+		if (afficheurs[i]==NULL){
 			afficheurs[i] = a;
 			return;
 		}

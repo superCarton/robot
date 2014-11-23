@@ -13,10 +13,10 @@ void Afficheur::afficher() {
 		string direct = (obs->getDirection() =='N') ? "Nord" : ((obs->getDirection() =='E') ? "Est" : ((obs->getDirection() =='S') ? "Sud" : "Ouest"));
 		cout << "/**** Information Robot ****/" << endl;
 		cout << "\tETAT COURANT : " << obs -> getEtat() -> getNomEtat() << endl;
-		cout << "\t\t" << obs -> getPosition();
+		cout << "\t\t" << (*(obs -> getPosition()));
 		cout << "\t\tDIRECTION :  " <<  direct << endl;
-		cout << "\t\t" << obs -> getObjet();
-		cout << "\t\t" << obs -> getPlot();
+		cout << "\t\t" << (*(obs -> getObjet()));
+		cout << "\t\t" << (*(obs -> getPlot()));
 		cout << "\n***************************************************\n" << endl << endl;
 	}
 }

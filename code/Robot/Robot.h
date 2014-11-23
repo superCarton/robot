@@ -15,7 +15,7 @@ using namespace std;
 class Robot {
 
 private:
-	static int MAX_OBSERVERS=2;
+	static int MAX_OBSERVERS;
 	Position position;
 	Plot plot;
 	Objet objet;
@@ -32,14 +32,23 @@ public:
 		objet(o),
 		direction(d),
 		etat(e),
-		afficheurs(MAX_OBSERVERS, 0)
+		afficheurs(2, NULL)
 	{};
 
 	EtatRobot* getEtat(){return etat;};
 
-	Position* getPosition(){return *position;}
-	Plot* getPlot(){return *plot;}
-	Objet* getObjet(){return *objet;}
+	Position* getPosition(){
+		return &position;
+	};
+
+	Plot* getPlot(){
+		return &plot;
+	};
+
+	Objet* getObjet(){
+		return &objet;
+	};
+
 	char getDirection(){return direction;}
 
 	void avancer(int n);
@@ -61,12 +70,6 @@ public:
 	void repartir();
 
 	void notify();
-
-	/*Position getPosition();
-
-	Objet getObjet();
-
-	Plot getPlot();*/
 
 	void addObserveur(Afficheur* a);
 
