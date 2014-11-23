@@ -136,7 +136,6 @@ void Robot::repartir() {
 }
 
 void Robot::notify() {
-	int i=0;
 	for (int i=0; i<MAX_OBSERVERS; i++){
 		if (afficheurs[i]!=NULL){
 			afficheurs[i]->update(this);
