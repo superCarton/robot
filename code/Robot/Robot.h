@@ -26,13 +26,13 @@ private:
 public:
 
 	Robot(int x=0, int y=0, Plot p=Plot(0), Objet o=Objet(0), char d='N',
-			EtatRobot* e=EtatRobot::getIni()) :
+			EtatRobot* e=EtatRobot::getIni(), Afficheur* a=NULL) :
 		position(Position(x,y)),
 		plot(p),
 		objet(o),
 		direction(d),
 		etat(e),
-		afficheurs(2, NULL)
+		afficheurs(2, a)
 	{};
 
 	EtatRobot* getEtat(){return etat;};

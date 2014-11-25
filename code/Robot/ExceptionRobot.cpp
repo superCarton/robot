@@ -7,12 +7,4 @@
 
 #include "ExceptionRobot.h"
 
-ExceptionRobot::ExceptionRobot() {
-	// TODO Auto-generated constructor stub
-
-}
-
-ExceptionRobot::~ExceptionRobot() {
-	// TODO Auto-generated destructor stub
-}
 
