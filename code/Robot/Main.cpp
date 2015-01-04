@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 
 	/* cas d'erreur */
 
-	cout << "/**** FIN ****/" << endl;
+	cout << "/**** FIN2 ****/" << endl;
 
 
 }
